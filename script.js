@@ -16,17 +16,34 @@ $(document).ready(function() {
 
                 // Construire l'HTML pour chaque projet, par exemple avec son 'nom' et 'categorie'
                 moncontenu += `
-                    <div class="projet">
+                    <div class="projet" data-nom="${post.nom}"> <!-- Ajout de data-nom -->
                         <h2>${post.nom}</h2>
                         <img class="img_projet" src="${post.photo}" alt="${post.nom}">
                         <p>Catégorie : ${post.categorie}</p>
-                        <p>Description : ${post.description}</p>
+                        <p class="description">Description : ${post.description}</p>
                     </div>
                 `;
             });
 
             // Insérer le contenu dans le div avec l'ID 'contenu'
             $('#div-droite2').html(moncontenu);
+
+            // Gestion du hover pour injecter le nom du projet
+            $('.projet').hover(
+                function() {
+                    // Récupérer le nom du projet à partir de l'attribut data-nom
+                    var nomProjet = $(this).data('nom');
+                    // Récupérer la description à partir de l'élément avec la classe 'description'
+                    var descProjet = $(this).find('.description').html();
+                    $('.project-name').html(nomProjet); // Injecter le nom dans la div de gauche
+                    $('.project-desc').html(descProjet); // Injecter la description dans la div de gauche
+                },
+                function() {
+                    // Enlever le nom du projet quand la souris quitte
+                    $('.project-name').html('');
+                    $('.projet-desc').html('');
+                }
+            );
 
             // Initialiser ScrollTrigger uniquement après avoir ajouté le contenu
             gsap.registerPlugin(ScrollTrigger);
