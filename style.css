@@ -1,0 +1,49 @@
+body, html {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+
+#div-gauche2,  #div-gauche3{
+    width: 30%;
+    background-color: pink;
+    margin: 0;
+    padding: 0;
+    height: 300px;
+}
+
+#titre2, #titre3 {
+    text-align: center;
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+#div-droite2, #div-droite3 {
+    width: 70%;
+    text-align: end;
+    background-color: aqua;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.img_projet {
+    height: 300px;
+    width: auto;
+}
+
+.greyBG {
+    background-color: #f2f2f2;
+}
