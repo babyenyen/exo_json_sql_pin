@@ -41,7 +41,7 @@ $(document).ready(function() {
                 function() {
                     // Enlever le nom du projet quand la souris quitte
                     $('.project-name').html('');
-                    $('.projet-desc').html('');
+                    $('.project-desc').html('');
                 }
             );
 
